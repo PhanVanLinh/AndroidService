@@ -1,10 +1,11 @@
-package toong.vn.androidservice;
+package toong.vn.androidservice.unboundservice;
 
 import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.util.Log;
+import toong.vn.androidservice.R;
 
 public class UnBoundedSongService extends Service {
     private String TAG = getClass().getSimpleName();

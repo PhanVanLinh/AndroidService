@@ -9,15 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".unboundservice.UnBoundActivity">
+
+        </activity>
+
+        <service android:name=".unboundservice.UnBoundedSongService"/>
+
+        <service android:name=".boundservice.BoundService"/>
+
+        <activity android:name=".boundservice.BoundActivity">
+        </activity>
+        <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-        <service android:name=".UnBoundedSongService"/>
     </application>
 
 </manifest>

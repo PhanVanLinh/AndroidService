@@ -1,11 +1,12 @@
-package toong.vn.androidservice;
+package toong.vn.androidservice.unboundservice;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import toong.vn.androidservice.R;
 
-public class MainActivity extends AppCompatActivity {
+public class UnBoundActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +29,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void playSong()  {
-        Intent myIntent = new Intent(MainActivity.this, UnBoundedSongService.class);
+        Intent myIntent = new Intent(UnBoundActivity.this, UnBoundedSongService.class);
         this.startService(myIntent);
     }
 
     public void stopSong()  {
-        Intent myIntent = new Intent(MainActivity.this, UnBoundedSongService.class);
+        Intent myIntent = new Intent(UnBoundActivity.this, UnBoundedSongService.class);
         this.stopService(myIntent);
     }
 
