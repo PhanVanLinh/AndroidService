@@ -12,14 +12,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.button_play).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.button_play_bound_service).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 playSong();
             }
         });
 
-        findViewById(R.id.button_stop).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.button_stop_unbound_service).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 stopSong();
@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void playSong()  {
-        Intent myIntent = new Intent(MainActivity.this, PlaySongService.class);
+        Intent myIntent = new Intent(MainActivity.this, UnBoundedSongService.class);
         this.startService(myIntent);
     }
 
     public void stopSong()  {
-        Intent myIntent = new Intent(MainActivity.this, PlaySongService.class);
+        Intent myIntent = new Intent(MainActivity.this, UnBoundedSongService.class);
         this.stopService(myIntent);
     }
 
