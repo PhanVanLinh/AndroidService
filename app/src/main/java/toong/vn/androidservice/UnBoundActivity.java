@@ -1,10 +1,9 @@
-package toong.vn.androidservice.unboundservice;
+package toong.vn.androidservice;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import toong.vn.androidservice.R;
 
 public class UnBoundActivity extends AppCompatActivity {
 
@@ -26,6 +25,13 @@ public class UnBoundActivity extends AppCompatActivity {
                 stopSong();
             }
         });
+
+        findViewById(R.id.button_open_another_activity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UnBoundActivity.this, SecondActivity.class));
+            }
+        });
     }
 
     public void playSong()  {
@@ -37,5 +43,4 @@ public class UnBoundActivity extends AppCompatActivity {
         Intent myIntent = new Intent(UnBoundActivity.this, UnBoundedSongService.class);
         this.stopService(myIntent);
     }
-
 }
